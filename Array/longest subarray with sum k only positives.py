@@ -27,23 +27,64 @@
 #             lenght=max(lenght,j-i+1)
 # print(lenght)
 
-#optimal approach
+#optimal approach for positives and zeroes only
 
-arr=[1,2,3,1,-1,1,0,1,1,1,3,3]
-j=0
-i=0
-maxx=0
-sum=0
-k=7
-while j<len(arr):
-    if sum>k:
-        sum=sum-arr[i]
-        i=i+1
-    elif sum<k:
-        sum+=arr[j]
-        j+=1
-    else:
-        maxx=max(maxx,j-i)
-        sum-=arr[i]
-        i+=1
-print(maxx)
+# arr=[3,-1,1]
+# j=0
+# i=0
+# maxx=0
+# sum=0
+# k=2
+# while j<len(arr):
+#     if sum>k:
+#         sum=sum-arr[i]
+#         i=i+1
+#     elif sum<k:
+#         sum+=arr[j]
+#         j+=1
+#     else:
+#         maxx=max(maxx,j-i)
+#         sum-=arr[i]
+#         i+=1
+# print(maxx)
+# arr=[1,1]
+# left=0
+# right=0
+# maxlen=0
+# sum=arr[0]
+# k=2
+# n=len(arr)
+# while right<n:
+#     while left<=right and sum>k:
+#         sum-=arr[left]
+#         left+=1
+#     if sum==k:
+#         maxlen=max(maxlen,right-left+1)
+#     right+=1
+#     if right<n:
+#         sum+=arr[right]
+# print(maxlen)
+
+
+#optimal approach for array with negatives
+
+arr=[3,-1,1]
+prefixsum=0
+prefixmap={}
+k=2
+maxlen=0
+
+for i , num in enumerate(arr):
+    prefixsum+=num
+
+    if prefixsum==k:
+        maxlen=max(maxlen,i+1)
+
+    target=prefixsum-k
+    if target in prefixmap:
+        lenght=i-prefixmap[target]
+        maxlen=max(maxlen,lenght)
+
+    if prefixsum not in prefixmap:
+        prefixmap[prefixsum]=i
+print(maxlen)
