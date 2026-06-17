@@ -15,4 +15,4 @@ else:
             arr[i],arr[index]=arr[index],arr[i]
             break
     arr[index+1:]=arr[index+1:][::-1]
-    print(arr)
+    print(arr) 
