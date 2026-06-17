@@ -24,4 +24,5 @@ for i in range (len(arr)-1,-1,-1):
         maxi=arr[i]
         ans.append(maxi)
 ans.reverse()
+
 print(ans)
