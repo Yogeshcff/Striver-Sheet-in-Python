@@ -68,10 +68,10 @@
 
 #optimal approach for array with negatives
 
-arr=[3,-1,1]
+arr=[1,-1,3,2,-2,-8,1,7,10,23]
 prefixsum=0
 prefixmap={}
-k=2
+k=0
 maxlen=0
 
 for i , num in enumerate(arr):
