@@ -20,7 +20,7 @@ arr=[10,20,30,40,50]
 floor=-1
 ceil=-1
 low=0
-x=5
+x=30
 high=len(arr)-1
 while low<=high:
     mid=low + (high - low)//2
@@ -28,11 +28,12 @@ while low<=high:
         floor=arr[mid]
         ceil=floor
         
-        print(floor,ceil)
+        break
     elif arr[mid]>x:
         ceil=arr[mid]
         high=mid-1
     else:
         floor=arr[mid]
         low=mid+1
-print(floor,ceil)
+if arr[mid]==x:
+    print(floor,ceil)

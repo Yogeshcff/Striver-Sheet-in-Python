@@ -60,7 +60,6 @@ while low<=high:
     mid=low+(high-low)//2
     if nums[mid]==target:
         first=mid
-        last=mid
         high=mid-1
     elif nums[mid]>target:
         high=mid-1
