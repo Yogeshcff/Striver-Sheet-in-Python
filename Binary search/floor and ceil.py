@@ -27,6 +27,7 @@ while low<=high:
     if arr[mid]==x:
         floor=arr[mid]
         ceil=floor
+        
         print(floor,ceil)
     elif arr[mid]>x:
         ceil=arr[mid]
