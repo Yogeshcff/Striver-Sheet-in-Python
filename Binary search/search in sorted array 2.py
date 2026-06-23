@@ -1,5 +1,5 @@
 def abc():
-    nums =[1]
+    nums =[1,0,1,1,1]
     target=0
     low=0
     high=len(nums)-1
@@ -7,15 +7,16 @@ def abc():
         mid=low+(high-low)//2
         if nums[mid]==target:
             return True
-        while nums[low]==nums[mid] and nums[mid]==nums[high] and len(nums)>1:
+        if nums[low]==nums[mid]==nums[high]:
             low+=1
             high-=1
+            continue
         if nums[mid]>=nums[low]:
             if nums[low]<=target<nums[mid]:
                 high=mid-1
             else:
                 low=mid+1
-        elif nums[high]>nums[mid]:
+        else:
             if nums[mid]<target<=nums[high]:
                 low=mid+1
             else:
