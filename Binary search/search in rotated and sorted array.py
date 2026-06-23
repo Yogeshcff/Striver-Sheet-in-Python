@@ -6,7 +6,7 @@ def sra():
     while low<=high:
         mid=low+(high-low)//2
         if arr[mid]==target:
-            return mid
+            return arr[mid]
         if arr[mid]>=arr[low]:
             if arr[low]<=target<arr[mid]:
                 high=mid-1

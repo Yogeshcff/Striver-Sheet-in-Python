@@ -1,0 +1,19 @@
+low=0
+nums=[1,3,5]
+high=len(nums)-1
+mini=float('inf')
+while low<=high:
+    mid=low+(high-low)//2
+    if low!=mid and nums[low]==nums[mid]:
+        low+=1
+        continue
+    if high!=mid and nums[high]==nums[mid]:
+        high-=1
+        continue
+    if nums[mid]<=nums[high]:
+        mini=min(mini,nums[mid])
+        high=mid-1
+    else:
+        mini=min(mini,nums[mid])
+        low=mid+1
+print(mini)
