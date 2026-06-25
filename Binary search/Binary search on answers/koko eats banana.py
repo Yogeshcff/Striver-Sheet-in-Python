@@ -10,7 +10,7 @@ def func(nums,rate):
 
     
 #using binary search
-deadline=8
+deadline=10
 nums=[3,6,7,11]
 low=1
 high=max(nums)
